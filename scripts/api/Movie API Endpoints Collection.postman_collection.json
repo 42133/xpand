@@ -1,0 +1,745 @@
+{
+	"info": {
+		"_postman_id": "8fc173a0-5b35-404e-8bfa-2a87c2e2fd8f",
+		"name": "Movie API Endpoints Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Movie",
+			"item": [
+				{
+					"name": "Get Movies Paginated",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/movies",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"movies"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Movies Paginated",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/movies",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"movies"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 13 Feb 2023 09:47:11 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"metadata\": {\n        \"size\": 10,\n        \"number\": 0,\n        \"numberOfElements\": 4,\n        \"first\": true,\n        \"totalElements\": 4,\n        \"totalPages\": 1,\n        \"last\": true\n    },\n    \"content\": [\n        {\n            \"id\": 1,\n            \"title\": \"Knock at the Cabin\",\n            \"date\": \"2023-02-02\",\n            \"rank\": 1,\n            \"revenue\": 14127170\n        },\n        {\n            \"id\": 2,\n            \"title\": \"80 for Brady\",\n            \"date\": \"2023-02-02\",\n            \"rank\": 2,\n            \"revenue\": 12701640\n        },\n        {\n            \"id\": 4,\n            \"title\": \"BBB\",\n            \"date\": \"2022-10-01\",\n            \"rank\": 8,\n            \"revenue\": 10900\n        },\n        {\n            \"id\": 5,\n            \"title\": \"AAA\",\n            \"date\": \"2022-10-01\",\n            \"rank\": 10,\n            \"revenue\": 10900\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Movie by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/movies/5",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"movies",
+								"5"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Movie by id",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/movies/5",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"movies",
+										"5"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 13 Feb 2023 09:47:01 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 5,\n    \"title\": \"AAA\",\n    \"date\": \"2022-10-01\",\n    \"rank\": 10,\n    \"revenue\": 10900\n}"
+						}
+					]
+				},
+				{
+					"name": "Create Movie",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"AAA\",\r\n    \"date\": \"2022-10-01\",\r\n    \"rank\": 10,\r\n    \"revenue\": 10900\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/movies",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"movies"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create Movie",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"AAA\",\r\n    \"date\": \"2022-10-01\",\r\n    \"rank\": 10,\r\n    \"revenue\": 10900\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/movies",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"movies"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 13 Feb 2023 09:46:43 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Movie created successfully\",\n    \"data\": {\n        \"id\": 5,\n        \"title\": \"AAA\",\n        \"date\": \"2022-10-01\",\n        \"rank\": 10,\n        \"revenue\": 10900\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Movie",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 4,\r\n    \"title\": \"BBB\",\r\n    \"date\": \"2022-10-01\",\r\n    \"rank\": 8,\r\n    \"revenue\": 10900\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/movies/4",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"movies",
+								"4"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update Movie",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 4,\r\n    \"title\": \"BBB\",\r\n    \"date\": \"2022-10-01\",\r\n    \"rank\": 8,\r\n    \"revenue\": 10900\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/movies/4",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"movies",
+										"4"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 13 Feb 2023 09:46:31 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Movie updated successfully\",\n    \"data\": {\n        \"id\": 4,\n        \"title\": \"BBB\",\n        \"date\": \"2022-10-01\",\n        \"rank\": 8,\n        \"revenue\": 10900\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Movie by id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/movies/3",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"movies",
+								"3"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete Movie by id",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/movies/3",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"movies",
+										"3"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 13 Feb 2023 09:46:22 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Movie deleted successfully\",\n    \"data\": null\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Actor",
+			"item": [
+				{
+					"name": "Get Actors Paginated",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/actors?movieId=3",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"actors"
+							],
+							"query": [
+								{
+									"key": "movieId",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Actors Paginated",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/actors?movieId=3",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"actors"
+									],
+									"query": [
+										{
+											"key": "movieId",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 13 Feb 2023 09:46:07 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"metadata\": {\n        \"size\": 10,\n        \"number\": 0,\n        \"numberOfElements\": 1,\n        \"first\": true,\n        \"totalElements\": 1,\n        \"totalPages\": 1,\n        \"last\": true\n    },\n    \"content\": [\n        {\n            \"id\": 4,\n            \"name\": \"Diogo Morgado\",\n            \"birthDate\": \"1981-01-17\",\n            \"gender\": \"Male\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Actor by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/actors/3",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"actors",
+								"3"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Actor by id",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/actors/3",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"actors",
+										"3"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 13 Feb 2023 09:45:56 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 3,\n    \"name\": \"Alba Batista\",\n    \"birthDate\": \"1997-07-10\",\n    \"gender\": \"Female\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Create Actor",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Actor Teste\",\r\n    \"birthDate\": \"1962-07-13\",\r\n    \"gender\": \"Male\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/actors",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"actors"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create Actor",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Actor Teste\",\r\n    \"birthDate\": \"1962-07-13\",\r\n    \"gender\": \"Male\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/actors",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"actors"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 13 Feb 2023 09:45:04 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Actor created successfully\",\n    \"data\": {\n        \"id\": 5,\n        \"name\": \"Actor Teste\",\n        \"birthDate\": \"1962-07-13\",\n        \"gender\": \"Male\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Actor",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"name\": \"Tom Test Cruise\",\r\n    \"birthDate\": \"1962-07-13\",\r\n    \"gender\": \"Male\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/actors/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"actors",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update Actor",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 1,\r\n    \"name\": \"Tom Test Cruise\",\r\n    \"birthDate\": \"1962-07-13\",\r\n    \"gender\": \"Male\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/actors/1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"actors",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 13 Feb 2023 09:44:27 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Actor updated successfully\",\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"Tom Test Cruise\",\n        \"birthDate\": \"1962-07-13\",\n        \"gender\": \"Male\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Actor",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/actors/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"actors",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete Actor",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/actors/1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"actors",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 13 Feb 2023 09:45:41 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Actor deleted successfully\",\n    \"data\": null\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}
