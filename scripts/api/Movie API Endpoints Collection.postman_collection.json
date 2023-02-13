@@ -14,13 +14,19 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{url}}/api/movies",
+							"raw": "{{url}}/api/movies?date=2023-02-02",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"api",
 								"movies"
+							],
+							"query": [
+								{
+									"key": "date",
+									"value": "2023-02-02"
+								}
 							]
 						}
 					},
@@ -77,14 +83,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{url}}/api/movies/5",
+							"raw": "{{url}}/api/movies/10",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"api",
 								"movies",
-								"5"
+								"10"
 							]
 						}
 					},
@@ -371,7 +377,7 @@
 			"name": "Actor",
 			"item": [
 				{
-					"name": "Get Actors Paginated",
+					"name": "Get Actors List",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -394,7 +400,7 @@
 					},
 					"response": [
 						{
-							"name": "Get Actors Paginated",
+							"name": "Get Actors List",
 							"originalRequest": {
 								"method": "GET",
 								"header": [],
@@ -420,6 +426,18 @@
 							"_postman_previewlanguage": "json",
 							"header": [
 								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
 									"key": "Content-Type",
 									"value": "application/json"
 								},
@@ -429,7 +447,7 @@
 								},
 								{
 									"key": "Date",
-									"value": "Mon, 13 Feb 2023 09:46:07 GMT"
+									"value": "Mon, 13 Feb 2023 16:10:17 GMT"
 								},
 								{
 									"key": "Keep-Alive",
@@ -441,7 +459,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"metadata\": {\n        \"size\": 10,\n        \"number\": 0,\n        \"numberOfElements\": 1,\n        \"first\": true,\n        \"totalElements\": 1,\n        \"totalPages\": 1,\n        \"last\": true\n    },\n    \"content\": [\n        {\n            \"id\": 4,\n            \"name\": \"Diogo Morgado\",\n            \"birthDate\": \"1981-01-17\",\n            \"gender\": \"Male\"\n        }\n    ]\n}"
+							"body": "[\n    {\n        \"id\": 2,\n        \"name\": \"Sandra Bullock\",\n        \"birthDate\": \"1964-07-26\",\n        \"gender\": \"Female\"\n    },\n    {\n        \"id\": 4,\n        \"name\": \"Diogo Morgado\",\n        \"birthDate\": \"1981-01-17\",\n        \"gender\": \"Male\"\n    }\n]"
 						}
 					]
 				},
