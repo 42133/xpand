@@ -1,9 +1,6 @@
 package com.xpand.movie.exception;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import org.springframework.http.HttpStatus;
-
-import java.time.LocalDateTime;
 
 /**
  * General I18N Exception so that Exception message creates and translates the message
