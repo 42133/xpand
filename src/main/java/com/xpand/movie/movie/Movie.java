@@ -37,6 +37,14 @@ public class Movie {
     public Movie() {
     }
 
+    public Movie(int id, String title, LocalDate date, int rank, BigDecimal revenue) {
+        this.id = id;
+        this.title = title;
+        this.date = date;
+        this.rank = rank;
+        this.revenue = revenue;
+    }
+
     public int getId() {
         return id;
     }

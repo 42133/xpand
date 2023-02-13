@@ -34,6 +34,13 @@ public class Actor {
     public Actor() {
     }
 
+    public Actor(int id, String name, LocalDate birthDate, String gender) {
+        this.id = id;
+        this.name = name;
+        this.birthDate = birthDate;
+        this.gender = gender;
+    }
+
     public int getId() {
         return id;
     }
