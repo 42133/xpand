@@ -29,8 +29,6 @@ public class MessageHandler extends ResponseEntityExceptionHandler {
     @ResponseBody
     @ExceptionHandler(MovieApiException.class)
     ResponseEntity<CustomErrorResponse> handleMovieApiException(MovieApiException ex) {
-        logger.error("Exception: {}", ex.getMessage());
-
         return handle(ex);
     }
 
@@ -70,6 +68,8 @@ public class MessageHandler extends ResponseEntityExceptionHandler {
         errors.setError( source.getMessage(exception.getErrorMessage(),args,
                 exception.getErrorCode() + " - No Message", locale));
         errors.setStatus(exception.getErrorCode().value());
+
+        logger.error("Exception: {}", errors.getError());
 
         return new ResponseEntity<>(errors, exception.getErrorCode());
     }
