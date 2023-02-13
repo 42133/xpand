@@ -1,12 +1,11 @@
 package com.xpand.movie.movie.filter;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-
+import org.springframework.format.annotation.DateTimeFormat;
 import java.time.LocalDate;
 
 public class MovieFilter {
 
-    @JsonFormat(pattern = "yyyy-MM-dd")
+    @DateTimeFormat(iso=DateTimeFormat.ISO.DATE)
     private LocalDate date;
 
     public LocalDate getDate() {
