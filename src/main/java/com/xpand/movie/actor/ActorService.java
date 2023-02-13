@@ -4,15 +4,16 @@ import com.xpand.movie.actor.filter.ActorFilter;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
+import java.util.List;
+
 public interface ActorService {
 
     /**
-     * Gets a paginated and filtered actor list
+     * Gets a filtered actor list
      * @param actorFilter Actor Filter
-     * @param pageable Page and Size
      * @return Actor List
      */
-    Page<Actor> getActors(ActorFilter actorFilter, Pageable pageable);
+    List<Actor> getActors(ActorFilter actorFilter);
 
     /**
      * Get actor with id actorId

@@ -6,13 +6,14 @@ import com.xpand.movie.actor.ActorService;
 import com.xpand.movie.actor.filter.ActorFilter;
 import com.xpand.movie.utils.message.Message;
 import com.xpand.movie.utils.message.MessageBuilder;
-import com.xpand.movie.utils.pagination.PageWrapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 import static com.xpand.movie.utils.message.Internationalization.*;
 import static com.xpand.movie.utils.message.Internationalization.UPDATE_SUCCESSFUL;
@@ -33,15 +34,12 @@ public class ActorController {
     private MessageBuilder<ActorDto> messageBuilder;
 
     @GetMapping
-    PageWrapper<ActorDto> getActorsPaginated(@RequestParam(defaultValue = "0") int page,
-                                             @RequestParam(defaultValue = "10") int size,
-                                             ActorFilter actorFilter){
-        logger.info("Get a paginated list of actors");
+    List<ActorDto> getActorsPaginated(ActorFilter actorFilter){
+        logger.info("Get a list of actors");
 
-        return new PageWrapper<>(
-                actorService.getActors(actorFilter, PageRequest.of(page, size))
-                        .map(actorMapper::actorToActorDto)
-        );
+        return actorService.getActors(actorFilter).stream()
+                .map(actorMapper::actorToActorDto)
+                .collect(Collectors.toList());
     }
 
     @GetMapping("/{id}")

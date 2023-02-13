@@ -7,9 +7,9 @@ import com.xpand.movie.exception.ResourceNotFoundException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 import static com.xpand.movie.utils.message.Internationalization.*;
 
@@ -22,10 +22,9 @@ public class ActorServiceImpl implements ActorService{
     private ActorRepository actorRepository;
 
     @Override
-    public Page<Actor> getActors(ActorFilter actorFilter, Pageable pageable) {
+    public List<Actor> getActors(ActorFilter actorFilter) {
         return actorRepository.findAll(
-                ActorSpecification.filter(actorFilter),
-                pageable
+                ActorSpecification.filter(actorFilter)
         );
     }
 
